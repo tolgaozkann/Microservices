@@ -1,0 +1,9 @@
+﻿namespace Microservices.Services.Catalog.WebAPI.Config;
+
+public interface IDatabaseSettings
+{
+    public string CourseCollectionName { get; set; }
+    public string CategoryCollectionName { get; set; }
+    public string ConntectionString { get; set; }
+    public string DatabaseName { get; set; }
+}
