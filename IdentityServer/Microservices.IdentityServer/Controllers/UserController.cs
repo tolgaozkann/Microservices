@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4;
 using Microservices.IdentityServer.Dtos;
@@ -44,6 +45,28 @@ namespace Microservices.IdentityServer.Controllers
                     400));
 
             return StatusCode(201);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUser()
+        {
+            var userIdClaim = User.Claims.FirstOrDefault(x => x.Type.Equals(JwtRegisteredClaimNames.Sub));
+
+            if (userIdClaim is null)
+                return BadRequest();
+
+            var user = await _userManager.FindByIdAsync(userIdClaim.Value);
+
+            if (user is null)
+                return BadRequest();
+
+            return Ok( new
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                City = user.City,
+            });
         }
     }
 }

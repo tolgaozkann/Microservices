@@ -68,7 +68,8 @@ namespace Microservices.IdentityServer
                         IdentityServerConstants.StandardScopes.OpenId, 
                         IdentityServerConstants.StandardScopes.Profile, 
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        "roles"
+                        "roles",
+                        IdentityServerConstants.LocalApi.ScopeName
                     },
                     AccessTokenLifetime = 1*60*60,
                     RefreshTokenExpiration = TokenExpiration.Absolute,
