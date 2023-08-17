@@ -1,1 +1,3 @@
+Microservices.IdentityServer : http://localhost:5001
 Microservices.Services.Catalog.WebAPI : http://localhost:5011
+Microservices.Services.PhotoStock.WebAPI : http://localhost:5012
