@@ -33,10 +33,10 @@ namespace Microservices.Services.PhotoStock.WebAPI.Controllers
             return CreateActionResultInstance(ResponseDto<PhotoDto>.Success(photoDto, 200));
         }
 
-        [HttpGet]
-        public IActionResult PhotoDelete(string photoUrl)
+        [HttpDelete]
+        public IActionResult PhotoDelete([FromRoute]string photoUrl)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/", photoUrl);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoUrl);
             if (!System.IO.File.Exists(path))
                 return CreateActionResultInstance(ResponseDto<NoContent>.Fail("Photo Not Found.", 404));
 
