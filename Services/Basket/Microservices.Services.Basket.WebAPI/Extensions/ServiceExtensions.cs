@@ -3,6 +3,7 @@ using Microservices.Services.Basket.WebAPI.Services.Abstract;
 using Microservices.Services.Basket.WebAPI.Services.Concrete;
 using Microservices.Shared.Services.Abstract;
 using Microservices.Shared.Services.Concrete;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using StackExchange.Redis;
 
@@ -33,5 +34,18 @@ public static class ServiceExtensions
     {
         services.AddScoped<ISharedIdentityService, SharedIdentityService>();
         services.AddScoped<IBasketService, BasketService>();
+    }
+
+    public static void ConfigureAuthentication(this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(opt =>
+            {
+                opt.Authority = configuration["IdentityServerUrl"];
+                opt.Audience = "resource_basket";
+                opt.RequireHttpsMetadata = false;
+
+            });
     }
 }

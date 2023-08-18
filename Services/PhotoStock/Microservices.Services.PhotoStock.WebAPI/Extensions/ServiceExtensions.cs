@@ -11,7 +11,7 @@ public static class ServiceExtensions
             .AddJwtBearer(opt =>
             {
                 opt.Authority = configuration["IdentityServerUrl"];
-                opt.Audience = "photo_stock_catalog";
+                opt.Audience = "resource_photo_stock";
                 opt.RequireHttpsMetadata = false;
             });
     }
