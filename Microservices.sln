@@ -24,11 +24,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservices.IdentityServe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{19D44065-4389-4ABF-9C2B-319AC6F65874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Services.PhotoStock.WebAPI", "Services\PhotoStock\Microservices.Services.PhotoStock.WebAPI\Microservices.Services.PhotoStock.WebAPI.csproj", "{18977F1D-C7DC-4979-B190-850957991AED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservices.Services.PhotoStock.WebAPI", "Services\PhotoStock\Microservices.Services.PhotoStock.WebAPI\Microservices.Services.PhotoStock.WebAPI.csproj", "{18977F1D-C7DC-4979-B190-850957991AED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{12111F2D-B4A4-4F6E-A6D8-8534C6B815F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Services.Basket.WebAPI", "Services\Basket\Microservices.Services.Basket.WebAPI\Microservices.Services.Basket.WebAPI.csproj", "{D63B8862-4C6C-48E9-8D1E-AD0FAE479357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microservices.Services.Basket.WebAPI", "Services\Basket\Microservices.Services.Basket.WebAPI\Microservices.Services.Basket.WebAPI.csproj", "{D63B8862-4C6C-48E9-8D1E-AD0FAE479357}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{170B35FE-8291-412B-B63C-480586B40CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.Services.Discount.WebAPI", "Services\Discount\Microservices.Services.Discount.WebAPI\Microservices.Services.Discount.WebAPI.csproj", "{03FC9012-BD91-4923-BE72-B46BA615A4C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +60,10 @@ Global
 		{D63B8862-4C6C-48E9-8D1E-AD0FAE479357}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D63B8862-4C6C-48E9-8D1E-AD0FAE479357}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D63B8862-4C6C-48E9-8D1E-AD0FAE479357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FC9012-BD91-4923-BE72-B46BA615A4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FC9012-BD91-4923-BE72-B46BA615A4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FC9012-BD91-4923-BE72-B46BA615A4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FC9012-BD91-4923-BE72-B46BA615A4C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,8 @@ Global
 		{18977F1D-C7DC-4979-B190-850957991AED} = {19D44065-4389-4ABF-9C2B-319AC6F65874}
 		{12111F2D-B4A4-4F6E-A6D8-8534C6B815F3} = {852C8B45-FEA3-49F3-AB66-36C9E5989153}
 		{D63B8862-4C6C-48E9-8D1E-AD0FAE479357} = {12111F2D-B4A4-4F6E-A6D8-8534C6B815F3}
+		{170B35FE-8291-412B-B63C-480586B40CFE} = {852C8B45-FEA3-49F3-AB66-36C9E5989153}
+		{03FC9012-BD91-4923-BE72-B46BA615A4C9} = {170B35FE-8291-412B-B63C-480586B40CFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2929D48F-F06A-4C76-86F9-FBBB67810149}

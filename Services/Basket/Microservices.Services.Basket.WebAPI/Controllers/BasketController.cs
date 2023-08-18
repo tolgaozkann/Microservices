@@ -22,7 +22,7 @@ namespace Microservices.Services.Basket.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetBasket() =>
+        public async Task<IActionResult> GetBasket() => 
             CreateActionResultInstance(await _basketService.GetBasket(_sharedIdentityService.GetUserId));
 
 
