@@ -1,3 +1,7 @@
+using Microservices.Services.Basket.WebAPI.Extensions;
+using Microservices.Shared.Services.Abstract;
+using Microservices.Shared.Services.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.ConfigureRedis(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 

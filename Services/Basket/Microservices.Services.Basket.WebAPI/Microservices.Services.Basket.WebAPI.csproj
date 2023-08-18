@@ -13,9 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Dtos\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Config\" />
+    <Folder Include="Services\Abstract\" />
+    <Folder Include="Services\Concrete\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Microservices.Shared\Microservices.Shared.csproj" />
   </ItemGroup>
 
 </Project>
