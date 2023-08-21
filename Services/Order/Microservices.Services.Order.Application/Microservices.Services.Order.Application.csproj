@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microservices.Services.Order.Domain\Microservices.Services.Order.Domain.csproj" />
+    <ProjectReference Include="..\Mivroservices.Services.Order.Infastructure\Mivroservices.Services.Order.Infastructure.csproj" />
+  </ItemGroup>
+
+</Project>
