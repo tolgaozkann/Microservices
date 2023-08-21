@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Microservices.Services.Order.Domain.Core\Microservices.Services.Order.Domain.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="OrderAggregate\" />
+  </ItemGroup>
+
 </Project>
