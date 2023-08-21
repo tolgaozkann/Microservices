@@ -4,7 +4,7 @@ namespace Microservices.Services.Order.Domain.OrderAggregate;
 
 public class Address : ValueObject
 {
-    #region Fields
+    #region Properties
     public string Province { get; private set; }
     public string District { get; private set; }
     public string Street { get; private set; }
@@ -12,6 +12,8 @@ public class Address : ValueObject
     public string Line { get; private set; }
 
     #endregion
+
+    #region ctor
 
     public Address(string province, string district, string street, string zipCode, string line)
     {
@@ -21,6 +23,8 @@ public class Address : ValueObject
         ZipCode = zipCode;
         Line = line;
     }
+
+    #endregion
 
     #region Methods
     protected override IEnumerable<object> GetEqualityComponents()

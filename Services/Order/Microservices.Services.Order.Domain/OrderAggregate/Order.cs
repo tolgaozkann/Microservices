@@ -28,7 +28,7 @@ public class Order : EntityBase, IAggregateRoot
             var newOrderItem = new OrderItem(productId, productName, pictureUrl, price);
             _orderItems.Add(newOrderItem);
         }
-        
+
     }
 
     public decimal GetTotalPrice => _orderItems.Sum(x => x.Price);

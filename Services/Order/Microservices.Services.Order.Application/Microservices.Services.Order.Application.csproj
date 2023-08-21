@@ -11,4 +11,12 @@
     <ProjectReference Include="..\Mivroservices.Services.Order.Infastructure\Mivroservices.Services.Order.Infastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
 </Project>
