@@ -2,5 +2,5 @@
 
 public class CreatedOrderDto
 {
-    public int OrderDto { get; set; }
+    public int OrderId { get; set; }
 }
