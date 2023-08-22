@@ -15,6 +15,7 @@ public class OrderItem : EntityBase
     }
     public OrderItem( string productId, string productName, string pictureUrl, decimal price)
     {
+        ProductId = productId;
         ProductName = productName;
         PictureUrl = pictureUrl;
         Price = price;

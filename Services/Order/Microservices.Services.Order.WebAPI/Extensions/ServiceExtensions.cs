@@ -2,6 +2,7 @@
 using Microservices.Services.Order.Infrastructure.EfCore;
 using Microservices.Shared.Services.Abstract;
 using Microservices.Shared.Services.Concrete;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microservices.Services.Order.WebAPI.Extensions
@@ -30,6 +31,19 @@ namespace Microservices.Services.Order.WebAPI.Extensions
             {
                 configuration.RegisterServicesFromAssemblyContaining(typeof(CreateOrderCommandHandler));
             });
+        }
+
+        public static void ConfigureAuthentication(this IServiceCollection services,
+            IConfiguration configuration)
+        {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.Authority = configuration["IdentityServerUrl"];
+                    opt.Audience = "resource_order";
+                    opt.RequireHttpsMetadata = false;
+
+                });
         }
     }
 }
