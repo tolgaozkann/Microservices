@@ -1,4 +1,7 @@
-﻿using Microservices.Services.Order.Infrastructure.EfCore;
+﻿using Microservices.Services.Order.Application.Handlers;
+using Microservices.Services.Order.Infrastructure.EfCore;
+using Microservices.Shared.Services.Abstract;
+using Microservices.Shared.Services.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 namespace Microservices.Services.Order.WebAPI.Extensions
@@ -13,6 +16,19 @@ namespace Microservices.Services.Order.WebAPI.Extensions
                 {
                     configure.MigrationsAssembly("Microservices.Services.Order.Infrastructure");
                 });
+            });
+        }
+
+        public static void RegisterServices(this IServiceCollection services)
+        {
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+        }
+
+        public static void ConfigureMediatR(this IServiceCollection services)
+        {
+            services.AddMediatR(configuration =>
+            {
+                configuration.RegisterServicesFromAssemblyContaining(typeof(CreateOrderCommandHandler));
             });
         }
     }
