@@ -10,8 +10,9 @@ builder.Services.AddControllersWithViews();
 //Configure Services
 
 builder.Services.ConfigureServiceApiAndClientSettings(builder.Configuration);
-builder.Services.ConfigureHttp();
+builder.Services.ConfigureHttp(builder.Configuration);
 builder.Services.ConfigureCokies();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 

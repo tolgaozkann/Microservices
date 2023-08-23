@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Exceptions\" />
     <Folder Include="Services\Abstract\" />
     <Folder Include="Services\Concrete\" />
   </ItemGroup>
