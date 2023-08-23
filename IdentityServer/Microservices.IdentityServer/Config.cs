@@ -20,6 +20,7 @@ namespace Microservices.IdentityServer
                 new ApiResource("resource_discount"){Scopes = {"discount_fullpermission"}},
                 new ApiResource("resource_order"){Scopes = {"order_fullpermission"}},
                 new ApiResource("resource_payment"){Scopes = {"payment_fullpermission"}},
+                new ApiResource("resource_gateway"){Scopes = {"gateway_fullpermission"}},
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
 
             };
@@ -48,6 +49,7 @@ namespace Microservices.IdentityServer
                 new ApiScope("discount_fullpermission","full permission for Discount API"),
                 new ApiScope("order_fullpermission","full permission for Order API"),
                 new ApiScope("payment_fullpermission","full permission for Payment API"),
+                new ApiScope("gateway_fullpermission","full permission for Gateway API"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName),
 
             };
@@ -61,7 +63,12 @@ namespace Microservices.IdentityServer
                     ClientId = "WebMvcClient",
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = { "catalog_fullpermision", "photo_stock_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes = { 
+                        "catalog_fullpermision", 
+                        "photo_stock_fullpermission", 
+                        "gateway_fullpermission", 
+                        IdentityServerConstants.LocalApi.ScopeName
+                    }
                 },
                 new Client
                 {
@@ -76,6 +83,7 @@ namespace Microservices.IdentityServer
                         "discount_fullpermission",
                         "order_fullpermission",
                         "payment_fullpermission",
+                        "gateway_fullpermission",
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId, 
                         IdentityServerConstants.StandardScopes.Profile, 

@@ -5,3 +5,5 @@ Microservices.Services.Basket.WebAPI : http://localhost:5013
 Microservices.Services.Discount.WebAPI : http://localhost:5014
 Microservices.Services.Order.WebAPI : http://localhost:5015
 Microservices.Services.Payment.WebAPI : http://localhost:5016
+Microservices.Gateways.Web : http://localhost:5000
+Microservices.Client.Web : http://localhost:5010
