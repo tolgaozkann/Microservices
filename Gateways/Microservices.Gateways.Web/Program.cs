@@ -1,9 +1,9 @@
 using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddJsonFile($"configuration.{builder.Environment.EnvironmentName.ToLower()}.json")
-    .AddEnvironmentVariables();
+var conf = builder.Configuration.AddJsonFile($"configuration.{builder.Environment.EnvironmentName.ToLower()}.json",true,true).Build();
 
 builder.Services.AddAuthentication().AddJwtBearer("GatewayAuthenticationScheme", opt =>
 {
@@ -12,7 +12,7 @@ builder.Services.AddAuthentication().AddJwtBearer("GatewayAuthenticationScheme",
     opt.RequireHttpsMetadata = false;
 });
 
-builder.Services.AddOcelot();
+builder.Services.AddOcelot(conf);
 
 
 
@@ -20,6 +20,7 @@ var app = builder.Build();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseOcelot().Wait();
 app.UseDeveloperExceptionPage();
 
 app.Run();
