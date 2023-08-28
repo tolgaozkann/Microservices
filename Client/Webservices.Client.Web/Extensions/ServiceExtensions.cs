@@ -3,6 +3,7 @@ using Microservices.Shared.Services.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Webservices.Client.Web.Config;
 using Webservices.Client.Web.Handlers;
+using Webservices.Client.Web.Helpers;
 using Webservices.Client.Web.Services.Abstract;
 using Webservices.Client.Web.Services.Concrete;
 
@@ -52,6 +53,12 @@ public static class ServiceExtensions
             opt.BaseAddress = new Uri($"{serviceApiSettings.IdentityBaseUri}/{serviceApiSettings.Catalog.Path}");
         }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
+        //configure photostock service
+        services.AddHttpClient<IPhotoStockService, PhotoStockService>(opt =>
+        {
+            opt.BaseAddress = new Uri($"{serviceApiSettings.IdentityBaseUri}/{serviceApiSettings.PhotoStock.Path}");
+        }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
+
     }
 
     public static void RegisterServices(this IServiceCollection services)
@@ -60,5 +67,6 @@ public static class ServiceExtensions
         services.AddScoped<ClientCredentialTokenHandler>();
         services.AddScoped<ISharedIdentityService, SharedIdentityService>();
         services.AddAccessTokenManagement();
+        services.AddSingleton<PhotoHelper>();
     }
 }

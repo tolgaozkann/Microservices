@@ -1,4 +1,6 @@
-﻿namespace Webservices.Client.Web.Models.Catalog;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Webservices.Client.Web.Models.Catalog;
 
 public class CourseUpdateInput
 {
@@ -10,4 +12,7 @@ public class CourseUpdateInput
     public string Picture { get; set; }
     public FeatureViewModel Feature { get; set; }
     public string CategoryId { get; set; }
+
+    [Display(Name = "Course Photo")]
+    public IFormFile PhotoFormFile { get; set; }
 }
